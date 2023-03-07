@@ -1,0 +1,137 @@
+*{
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+#root{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+body{
+
+
+
+}
+/* Header */
+.Container {
+  width: 1024px;
+  height: 100px;
+  display:flex;
+  justify-content:space-between;
+  color:white;
+
+}
+
+.Control{
+
+  width: 1000px;
+  height: 48px;
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+  
+}
+
+.control-buttons{
+  
+
+  width: 169px;
+  height: 26px;
+  
+top:0px;
+display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.main-button{
+  width: 80px;
+  height: 26px;
+  background: #0271C7;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  color: azure;
+  cursor: pointer;
+}
+
+.input-area{
+
+  width: 250px;
+height: 28px;
+display: flex;
+flex-direction: row;
+align-items: center;
+
+}
+.input-area input{
+  width: 210px;
+  height: 28px;
+}
+.input-area img{
+
+  width: 20px;
+height: 20px;
+margin-right: 20px;
+}
+
+
+/* main */
+.main-container{
+width: 1440px;
+height: 700px;
+
+
+}
+/* Переключение месяцев */
+.bottow-row{
+  width: 1000px;
+  height: 48px;
+
+  display:flex;
+   align-items: center;
+  color:white;
+  background-color: #0271C7;
+ 
+}
+
+.month-contol{
+  width: 220px;
+  height: 24px;
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+
+}
+
+.month-contol span{
+
+  font-size: 18px;
+  color: black;
+
+}
+
+.button-icon{
+
+  box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+    cursor: pointer;
+}
+.extra-button{
+
+
+  width: 59px;
+height: 18px;
+margin-left: 10px;
+background: #FFFFFF;
+box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+cursor: pointer;
+}
