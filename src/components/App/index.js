@@ -16,61 +16,14 @@ const defaultEvent = {
   description:'',
   date:moment().format('X')
 }
+
 function App() {
 
   window.moment = moment;
   moment.updateLocale('en',{week:{dow :1}});
 
-    // СТилизованные компоненты
+ // СТилизованные компоненты
 
-  //  СТили для формы
-const FormPositionWrapper = styled.div`
-  position:absolute;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:100;
-  background-color:rgba (0 , 0,0,0.35);
-  color:white;
-
-`; 
-
-const  EventTitle  = styled('input')`
-padding:4px 14px;
-/* font-size:.85rem; */
-width:100%;
-color:#DDDD;
-outline:unset;
-background-color:#1E1F21;
-border-bottom:1px solid gray;
-`; 
-
-const  EventTBody  = styled('input')`
-padding:4px 14px;
-/* font-size:85rem; */
-width:100%;
-color:#DDDD;
-outline:unset;
-background-color:#1E1F21;
-border-bottom:1px solid gray;
-`; 
-
-const  ButtonWrapper  = styled.div`
-padding:8px 14px;
-display:flex;
-justify-content:flex-end;
-
-`; 
-
-const  FormWrapper  = styled.div`
-width:200px;
-background-color:#1E1F21;
-
-`; 
 // СОстояние для текущего дня
   const [today ,SetToday] = useState(moment());
 
@@ -92,13 +45,12 @@ background-color:#1E1F21;
 const start_day = today.clone().startOf('month').startOf('week');
 
 
-
 // Для формы
 const [event ,Setevent] = useState(true); 
 const [isShowForm ,SetiShowForm] = useState(null); 
 const [method ,Setmethod] = useState(null); 
 
-// Мы вызываем openFormHandler в мап календаря и кладем event в eventForUpdate
+// Мы вызываем openFormHandler из  мап календаря и кладем event в eventForUpdate
 const  openFormHandler = (methodName,eventForUpdate,dayItem)=>{
   console.log(dayItem);
   // Передаем  event дня в состояние event либо передаем defaultEvent предварительно изменив в нем date на день 
@@ -124,8 +76,8 @@ const ChangeEventHandler =(text,field)=>{
 }
 // Добавление и редактирование событий
 const EventFetchHandler =()=>{
- const fetchUrl= method==='Update' ? `${url}/events/${event.id}`:`${url}/events`;
- const httpMethod = method==='Update'? 'PATCH':'POST';
+const fetchUrl= method==='Update' ? `${url}/events/${event.id}`:`${url}/events`;
+const httpMethod = method==='Update'? 'PATCH':'POST';
 fetch( fetchUrl,{
   method:httpMethod ,
   headers: {
@@ -193,19 +145,25 @@ const [events ,Setevents] = useState([]);
     {
       
       isShowForm ? (
-          <FormPositionWrapper>
-            <FormWrapper>
-              <EventTBody value={event.title} onChange={e=>ChangeEventHandler(e.target.value,'title')}/>
-              <EventTitle value={event.description} onChange={e=>ChangeEventHandler(e.target.value,'description')}/>
-              <ButtonWrapper>
+          <div className='cell-popup'>
+            <div className='Frame1'>
+              <img src="./cross.png" alt="" onClick={CancelButtonHandler}/>
+            </div>
+              <input placeholder='Событие' className='Frame2' value={event.title} onChange={e=>ChangeEventHandler(e.target.value,'title')}/>
+              <input  placeholder='День, месяц, год' className='Frame4'/>
+              <div className='Frame5'>
+                <input  placeholder='Имена участников'/>
+              </div>
+              <input placeholder='Описание' className='Frame6' EventTitle value={event.description} onChange={e=>ChangeEventHandler(e.target.value,'description')}/>
+              
+              <div className='Frame3'>
                 <button  onClick={EventFetchHandler}>   {method}  </button>
-                <button onClick={CancelButtonHandler}> Cancel    </button>
                 <button onClick={RemoveEventHandler}> Remove    </button>
-              </ButtonWrapper>
-            </FormWrapper>
-          </FormPositionWrapper>
+              </div>
+          </div>
         ) : null 
     }
+
     {/* Весь документ */}
       <Header/>
       <div className='main-container'>

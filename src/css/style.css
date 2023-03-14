@@ -97,7 +97,6 @@ height: 700px;
   display:flex;
    align-items: center;
   color:white;
-  background-color: #0271C7;
  
 }
 
@@ -134,4 +133,152 @@ background: #FFFFFF;
 box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
 border-radius: 4px;
 cursor: pointer;
+}
+
+/* Table */
+
+.table{
+  width: 1010px;
+  height: 610px;
+  display: grid;
+  grid-template-columns:repeat(7 , 1fr);
+  grid-template-rows:repeat(5 , 1fr);
+  grid-gap:1px;
+  background-color: rgb(30 31 33);
+}
+
+.CurentDay{
+
+  height: 100%;
+  width:31px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background-color:red;
+}
+.ShowDayWarpper{
+
+  display:flex;
+  justify-content:flex-end;
+  flex-direction:row;
+}
+.DayWrapper{
+
+  height:33px;
+  width:33px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:2px;
+  cursor: pointer;
+
+}
+.EventListWrapper{
+  list-style: none;
+  margin:unset;
+  margin-left: 20px;
+  width: 20px;
+
+}
+
+/* Для формы */
+
+.cell-popup{
+  margin-top: 200px;
+  margin-left: 200px;
+  width: 300px;
+  height: 335px;
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  z-index:100;
+  box-shadow: inset 0px 0px 1px 2px rgba(0, 0, 0, 0.25);
+  background-color: aqua;
+
+
+}
+.Frame1{
+  width: 266.32px;
+  height: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 12px;
+  margin-left: 12px;
+}
+.Frame1 img{
+
+  cursor: pointer;
+  width: 6px;
+height: 6px;
+}
+.Frame2{
+  left: 12px;
+  left: 12px;
+  width: 266.32px;
+  height: 28px; 
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-left: 12px;
+  box-shadow: inset 0px 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+
+  
+}
+.Frame4{ 
+  width: 266.32px;
+  height: 28px;
+  margin-top: 8px;
+  margin-left: 12px;
+  box-shadow: inset 0px 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+ 
+
+
+}
+
+.Frame5{
+  width: 266.32px;
+  height: 44px;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 0px 16px;
+  margin-top: 8px;
+
+
+}
+.Frame5 input{
+  width: 266.32px;
+  height: 28px;
+    box-shadow: inset 0px 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+
+
+}
+
+.Frame6{
+
+  width: 266.32px;
+  height: 125px;
+  margin-top: 24px;
+  margin-left: 12px;
+  box-shadow: inset 0px 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.Frame3 {
+  width: 266.32px;
+  height: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 12px;
+  margin-top: 4px;
+
+
 }
